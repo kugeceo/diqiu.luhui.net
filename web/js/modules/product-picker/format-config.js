@@ -2,7 +2,7 @@ import {
   forEach as lodashForEach,
   map as lodashMap,
 } from 'lodash';
-import { availableAtDate } from '../layers/util';
+import { available } from '../layers/selectors';
 
 const periodIntervalMap = {
   daily: 'Day',
@@ -107,7 +107,7 @@ export default function buildLayerFacetProps(config, selectedDate) {
   const layers = formatFacetProps(config);
 
   return lodashMap(layers, (layer) => {
-    layer.availableAtDate = availableAtDate(layer, selectedDate).toString();
+    layer.availableAtDate = available(layer.id, selectedDate, [layer]).toString();
     getLayerPeriodFacetProps(layer);
     if (layer.daynight && layer.daynight.length) {
       layer.daynight = layer.daynight.map(capitalizeFirstLetter);
