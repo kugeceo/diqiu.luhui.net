@@ -413,13 +413,7 @@ export default function mapui(models, config, store, ui) {
         },
         state,
       );
-      // lodashEach(defs, (def) => {
-      //   if (isGraticule(def, proj.id)) {
-      //     addGraticule(def.opacity, layerGroupStr);
-      //   } else {
-      //     map.addLayer(createLayer(def));
-      //   }
-      // });
+
       // get all created layers as promises
       const createdLayersFromDefs = defs.map((def) => new Promise((resolve) => {
         if (isGraticule(def, proj.id)) {
@@ -933,8 +927,9 @@ export default function mapui(models, config, store, ui) {
    * @returns {number} Index of layer in OpenLayers layer array
    */
   function findLayerIndex(def, layerGroup) {
-    layerGroup = layerGroup || self.selected;
-    const layers = layerGroup.getLayers().getArray();
+    const layerGroupToCheck = layerGroup || self.selected;
+    const layers = layerGroupToCheck.getLayers().getArray();
+    let index;
 
     const isGranule = !!(def.tags && def.tags.contains('granule'));
     if (isGranule) {
@@ -942,32 +937,21 @@ export default function mapui(models, config, store, ui) {
         const isTile = layers[layerIndex].type === 'TILE';
         // if not TILE type, it is a granule LayerGroup
         if (!isTile) {
-          const layerIndexlayerGroup = layers[layerIndex];
-          const layerGroupCollection = layerIndexlayerGroup.getLayers().getArray();
-          if (layerGroupCollection.length && layerGroupCollection[0].wv && def.id === layerGroupCollection[0].wv.id) {
-            return layerIndex;
+          const layerGroupGranule = layers[layerIndex];
+          const layerGroupCollection = layerGroupGranule.getLayers().getArray();
+          if (!index && layerGroupCollection.length && layerGroupCollection[0].wv && def.id === layerGroupCollection[0].wv.id) {
+            index = layerIndex;
           }
         }
       });
-      // for (const layerIndex in layers) {
-      //   const isTile = layers[layerIndex].type === 'TILE';
-      //   // if not TILE type, it is a granule LayerGroup
-      //   if (!isTile) {
-      //     const layerGroup = layers[layerIndex];
-      //     const layerGroupCollection = layerGroup.getLayers().getArray();
-      //     if (layerGroupCollection.length && layerGroupCollection[0].wv && def.id === layerGroupCollection[0].wv.id) {
-      //       return layerIndex;
-      //     }
-      //   }
-      // }
     } else {
-      const index = lodashFindIndex(layers, {
+      index = lodashFindIndex(layers, {
         wv: {
           id: def.id,
         },
       });
-      return index;
     }
+    return index;
   }
 
   /*
