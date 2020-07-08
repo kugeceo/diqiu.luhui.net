@@ -66,7 +66,7 @@ export default function mapui(models, config, store, ui) {
   const rotation = new MapRotate(self, models, store);
   const dateline = mapDateLineBuilder(models, config, store, ui);
   const precache = mapPrecacheTile(models, config, cache, self);
-  const compareMapUi = mapCompare(config, store);
+  const compareMapUi = self.compareMapUi = mapCompare(config, store);
   const granuleFootprints = {};
   const dataRunner = self.runningdata = new MapRunningData(
     models,
@@ -99,7 +99,6 @@ export default function mapui(models, config, store, ui) {
    */
   const subscribeToStore = function(action) {
     switch (action.type) {
-      // # CHANGE IN SETTINGS ORDER
       case layerConstants.UPDATE_GRANULE_LAYER_DATES: {
         const granuleOptions = {
           id: action.id,
@@ -107,7 +106,6 @@ export default function mapui(models, config, store, ui) {
         };
         return reloadLayers(self.selected, granuleOptions);
       }
-      // # RESET IN SETTINGS
       case layerConstants.RESET_GRANULE_LAYER_DATES: {
         const granuleOptions = {
           id: action.id,
@@ -115,15 +113,14 @@ export default function mapui(models, config, store, ui) {
         };
         return reloadLayers(self.selected, granuleOptions);
       }
-      // # HOVER IN SETTINGS OR VIA MAP (REMOVE SETTINGS VERSION?)
       case layerConstants.TOGGLE_HOVERED_GRANULE: {
         const state = store.getState();
         let geometry;
         let date;
         const hoverGranule = action.hoveredGranule;
         if (hoverGranule) {
-          const { activeString, id, granuleDate } = hoverGranule;
-          geometry = state.layers.granuleLayers[activeString][id].geometry[granuleDate];
+          const { activeString, granuleDate } = hoverGranule;
+          geometry = state.layers.granuleGeometry[activeString][granuleDate];
           date = granuleDate;
         }
         return granuleFootprintDraw(geometry, date);
@@ -514,9 +511,7 @@ export default function mapui(models, config, store, ui) {
           }
           granuleLayerParam = { granuleDates, granuleCount, geometry };
         }
-        // TODO: should pass empty param to compare mode ?
-        // TODO: issue with enter/exit and zeroing date solved by requesting each time
-        // TODO: seems now an update problem presents itself if an empty object is sent
+
         const createdLayer = createLayer(def, {
           date: state.date[arr[1]],
           group: arr[0],
@@ -681,34 +676,6 @@ export default function mapui(models, config, store, ui) {
             }
           }
         });
-
-        // for (const layerIndex in layersCollection) {
-        //   const isTile = layersCollection[layerIndex].type === 'TILE';
-        //   const isVector = layersCollection[layerIndex].type === 'VECTOR';
-        //   if (!isTile && !isVector) {
-        //     const layerGroup = layersCollection[layerIndex];
-        //     const layerGroupCollection = layerGroup.getLayers().getArray();
-        //     if (compare && compare.active) {
-        //       for (const layerIndex in layerGroupCollection) {
-        //         const isTile = layerGroupCollection[layerIndex].type === 'TILE';
-        //         if (!isTile && !layerGroupCollection[layerIndex].wv) {
-        //           const layerGroup = layerGroupCollection[layerIndex];
-        //           const tileLayer = layerGroup.getLayers().getArray();
-        //           // inner tile layer
-        //           if (tileLayer[0].wv && def.id === tileLayer[0].wv.id) {
-        //             if (tileLayer[0].wv.group === activeStr) {
-        //               layerGroup.setOpacity(action.opacity);
-        //             }
-        //           }
-        //         }
-        //       }
-        //     } else if (layerGroupCollection[0].wv && def.id === layerGroupCollection[0].wv.id) {
-        //       if (layerGroupCollection[0].wv.group === activeStr) {
-        //         layerGroup.setOpacity(action.opacity);
-        //       }
-        //     }
-        //   }
-        // }
       } else {
         const layer = findLayer(def, activeStr);
         layer.setOpacity(action.opacity);
@@ -744,8 +711,6 @@ export default function mapui(models, config, store, ui) {
       addGraticule(def.opacity, activeLayerStr);
       updateLayerVisibilities();
       self.events.trigger('added-layer');
-      // TODO : NEED AVAILABLE DATES ?
-      // def.availableDates = datesinDateRanges(def, date, true);
     } else if (firstLayer && firstLayer.get('group') && firstLayer.get('granule') !== true) {
       // Find which map layer-group is the active LayerGroup
       // and add layer to layerGroup in correct location
@@ -1292,7 +1257,7 @@ export default function mapui(models, config, store, ui) {
     function onMouseMove(e) {
       const state = store.getState();
       if (self.mapIsbeingZoomed) return;
-      if (compareMapUi && compareMapUi.dragging) return;
+      if (self.compareMapUi && self.compareMapUi.dragging) return;
       // if mobile return
       if (util.browser.small) return;
       // if measure is active return
