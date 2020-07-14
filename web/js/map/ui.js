@@ -99,14 +99,14 @@ export default function mapui(models, config, store, ui) {
    */
   const subscribeToStore = function(action) {
     switch (action.type) {
-      case layerConstants.UPDATE_GRANULE_LAYER_DATES: {
+      case layerConstants.UPDATE_GRANULE_LAYER_OPTIONS: {
         const granuleOptions = {
           id: action.id,
           reset: null,
         };
         return reloadLayers(self.selected, granuleOptions);
       }
-      case layerConstants.RESET_GRANULE_LAYER_DATES: {
+      case layerConstants.RESET_GRANULE_LAYER_OPTIONS: {
         const granuleOptions = {
           id: action.id,
           reset: action.id,
@@ -117,9 +117,9 @@ export default function mapui(models, config, store, ui) {
         const state = store.getState();
         let geometry;
         let date;
-        const hoverGranule = action.hoveredGranule;
-        if (hoverGranule) {
-          const { activeString, granuleDate } = hoverGranule;
+        const { hoveredGranule } = action;
+        if (hoveredGranule) {
+          const { activeString, granuleDate } = hoveredGranule;
           geometry = state.layers.granuleGeometry[activeString][granuleDate];
           date = granuleDate;
         }
@@ -417,7 +417,7 @@ export default function mapui(models, config, store, ui) {
           addGraticule(def.opacity, layerGroupStr);
         } else {
           // update granule date order and reset
-          const isGranule = !!(def.tags && def.tags.contains('granule'));
+          const { isGranule } = def;
           let granuleLayerParam;
           if (isGranule) {
             const granuleReset = granuleOptions && granuleOptions.reset === def.id;
@@ -496,7 +496,7 @@ export default function mapui(models, config, store, ui) {
         return true;
       })
       .map((def) => new Promise((resolve) => {
-        const isGranule = !!(def.tags && def.tags.contains('granule'));
+        const { isGranule } = def;
         let granuleLayerParam;
         if (isGranule) {
           const granuleReset = granuleOptions && granuleOptions.reset === def.id;
@@ -646,7 +646,7 @@ export default function mapui(models, config, store, ui) {
       strokeStyle.setColor(`rgba(255, 255, 255,${action.opacity})`);
       self.selected.render();
     } else {
-      const isGranule = !!(def.tags && def.tags.contains('granule'));
+      const { isGranule } = def;
       if (isGranule) {
         const layersCollection = self.selected.getLayers().getArray();
         lodashEach(Object.keys(layersCollection), (layerIndex) => {
@@ -896,7 +896,7 @@ export default function mapui(models, config, store, ui) {
     const layers = layerGroupToCheck.getLayers().getArray();
     let index;
 
-    const isGranule = !!(def.tags && def.tags.contains('granule'));
+    const { isGranule } = def;
     if (isGranule) {
       lodashEach(Object.keys(layers), (layerIndex) => {
         const isTile = layers[layerIndex].type === 'TILE';
