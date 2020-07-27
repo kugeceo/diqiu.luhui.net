@@ -80,6 +80,7 @@ class SmartHandoff extends Component {
       selectedProduct,
       selectProduct,
       isActive,
+      showWarningModal,
     } = this.props;
 
     /** Determine if data-download 'smart-handoff' tab is activated by user */
@@ -135,7 +136,7 @@ class SmartHandoff extends Component {
 
         { /** Download button that transfers user to NASA's Earthdata Search */ }
         <Button
-          onClick={() => openEarthDataSearch(extentCoordinates)}
+          onClick={() => showWarningModal(extentCoordinates)}
           id="download-btn"
           text="Download"
           className="red"
@@ -184,7 +185,7 @@ const closeModal = () => {
 /**
  * A custom modal window that instructs the user they are being directed to NASA's Earthdata Search web tool.
  */
-const SmartHandoffModal = () => (
+const SmartHandoffModal = (coords) => () => (
   <>
     <div id="modal-container">
 
@@ -232,7 +233,7 @@ const SmartHandoffModal = () => (
         />
 
         <Button
-          onClick={() => openEarthDataSearch()} // Need to pass reference of current state of boundaries
+          onClick={() => openEarthDataSearch(coords)} // Need to pass reference of current state of boundaries
           id="continue-btn"
           text="Continue"
           className="red"
@@ -317,11 +318,11 @@ const mapStateToProps = (state, ownProps) => {
  * @param {*} dispatch | A function of the Redux store that is triggered upon a change of state.
  */
 const mapDispatchToProps = (dispatch) => ({
-  showWarningModal: () => {
+  showWarningModal: (boundaries) => {
     dispatch(
       openCustomContent('warning_now_leaving_worldview', {
         headerText: 'Leaving Worldview',
-        bodyComponent: SmartHandoffModal(),
+        bodyComponent: SmartHandoffModal(boundaries),
         size: 'lg',
       }),
     );
