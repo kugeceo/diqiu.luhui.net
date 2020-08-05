@@ -459,6 +459,7 @@ export default function mapui(models, config, store, ui) {
       // resolve them with Promise.all to preserve layer order delay for CMR granule requests
       await Promise.all(createdLayersFromDefs)
         .then((createdLayers) => {
+          clearLayers(map);
           lodashEach(createdLayers, (createdLayer) => {
             map.addLayer(createdLayer);
           });
@@ -467,7 +468,6 @@ export default function mapui(models, config, store, ui) {
       updateLayerVisibilities();
     } else {
       const stateArray = [['active', 'selected'], ['activeB', 'selectedB']];
-      clearLayers(map);
       if (
         compareState
         && !compareState.isCompareA
@@ -483,6 +483,7 @@ export default function mapui(models, config, store, ui) {
 
       await Promise.all(stateArrayGroups)
         .then((newGroupedLayers) => {
+          clearLayers(map);
           lodashEach(newGroupedLayers, (compareLayerGroup) => {
             map.addLayer(compareLayerGroup);
           });
