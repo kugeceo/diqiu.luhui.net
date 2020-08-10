@@ -466,7 +466,9 @@ export default function mapui(models, config, store, ui) {
             map.addLayer(createdLayer);
           });
         })
-        .catch((error) => console.log(error));
+        .catch((error) => {
+          throw error;
+        });
       updateLayerVisibilities();
     } else {
       const stateArray = [['active', 'selected'], ['activeB', 'selectedB']];
@@ -490,7 +492,9 @@ export default function mapui(models, config, store, ui) {
             map.addLayer(compareLayerGroup);
           });
         })
-        .catch((error) => console.log(error));
+        .catch((error) => {
+          throw error;
+        });
       compareMapUi.create(map, compareState.mode);
       updateLayerVisibilities();
     }
@@ -533,7 +537,9 @@ export default function mapui(models, config, store, ui) {
         group: layerGroupStr,
         date: activeDateStr,
       }))
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        throw error;
+      });
   }
   /*
    * Function called when layers need to be updated
