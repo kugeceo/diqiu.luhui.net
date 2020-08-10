@@ -1,4 +1,7 @@
 /* eslint-disable no-multi-assign */
+/* eslint-disable no-shadow */
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-nested-ternary */
 import {
   throttle as lodashThrottle,
   forOwn as lodashForOwn,
@@ -144,7 +147,7 @@ export default function mapui(models, config, store, ui) {
       case layerConstants.REMOVE_LAYER:
         return removeLayer(action);
       case layerConstants.TOGGLE_LAYER_VISIBILITY:
-        return updateLayerVisibilities(action);
+        return updateLayerVisibilities();
       case layerConstants.UPDATE_OPACITY:
         return updateOpacity(action);
       case compareConstants.CHANGE_STATE:
@@ -434,7 +437,6 @@ export default function mapui(models, config, store, ui) {
       if (!compareState.active && compareMapUi.active) {
         compareMapUi.destroy();
       }
-      clearLayers(map);
       const defs = getLayers(
         activeLayers,
         {
@@ -715,7 +717,7 @@ export default function mapui(models, config, store, ui) {
    * @returns {void}
    */
 
-  async function addLayer(def, date, activeLayers) {
+  const addLayer = async function(def, date, activeLayers) {
     const state = store.getState();
     const { compare, layers, proj } = state;
     const activeDateStr = compare.isCompareA ? 'selected' : 'selectedB';
@@ -731,7 +733,6 @@ export default function mapui(models, config, store, ui) {
     if (isGraticule(def, proj.id)) {
       addGraticule(def.opacity, activeLayerStr);
       updateLayerVisibilities();
-      self.events.trigger('added-layer');
     } else if (firstLayer && firstLayer.get('group') && firstLayer.get('granuleGroup') !== true) {
       // Find which map layer-group is the active LayerGroup
       // and add layer to layerGroup in correct location
@@ -742,18 +743,15 @@ export default function mapui(models, config, store, ui) {
         date,
         group: activeLayerStr,
       });
-      activelayer.getLayers().insertAt(mapIndex, newLayer);
+      await activelayer.getLayers().insertAt(mapIndex, newLayer);
       compareMapUi.create(self.selected, compare.mode);
       updateLayerVisibilities();
-      self.events.trigger('added-layer');
     } else {
       const newLayer = await createLayer(def);
-      self.selected.getLayers().insertAt(mapIndex, newLayer);
-
+      await self.selected.getLayers().insertAt(mapIndex, newLayer);
       updateLayerVisibilities();
-      self.events.trigger('added-layer');
     }
-  }
+  };
   /*
    *Initiates the adding of a layer or Graticule
    *
@@ -799,7 +797,7 @@ export default function mapui(models, config, store, ui) {
     const activeLayerStr = compare.activeString;
     const activeDate = compare.isCompareA ? 'selected' : 'selectedB';
     const activeLayersCollection = layers[activeLayerStr];
-    const activeLayers = getLayers(
+    const activeLayers = await getLayers(
       activeLayersCollection,
       {},
       state,
@@ -818,10 +816,9 @@ export default function mapui(models, config, store, ui) {
     }
     await lodashEach(activeLayers, async (def) => {
       const {
-        id, layer, period, vectorStyle,
+        id, isGranule, layer, period, vectorStyle,
       } = def;
       const layerName = layer || id;
-
       if (!['subdaily', 'daily', 'monthly', 'yearly'].includes(period)) {
         return;
       }
@@ -842,7 +839,6 @@ export default function mapui(models, config, store, ui) {
           compareMapUi.update(activeLayerStr);
         }
       } else {
-        const { isGranule } = def;
         let granuleLayerParam;
         if (isGranule) {
           const granuleState = layers.granuleLayers[activeLayerStr][id];
