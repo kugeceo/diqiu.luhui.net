@@ -1,0 +1,38 @@
+{
+	"name": "Zoom Earth",
+	"short_name": "Zoom Earth",
+	"start_url": "/",
+	"scope": "/",
+	"display": "fullscreen",
+	"theme_color": "#000",
+	"background_color": "#000",
+	"description": "View LIVE satellite images",
+	"orientation": "any",
+	"icons": [
+		{
+			"src": "/assets/images/icon-16.png",
+			"sizes": "16x16",
+			"type": "image/png"
+		},
+		{
+			"src": "/assets/images/icon-32.png",
+			"sizes": "32x32",
+			"type": "image/png"
+		},
+		{
+			"src": "/assets/images/icon-100.jpg",
+			"sizes": "100x100",
+			"type": "image/jpeg"
+		},
+		{
+			"src": "/assets/images/icon-200.jpg",
+			"sizes": "200x200",
+			"type": "image/jpeg"
+		},
+		{
+			"src": "/assets/images/icon-400.jpg",
+			"sizes": "400x400",
+			"type": "image/jpeg"
+		}
+	]
+}
