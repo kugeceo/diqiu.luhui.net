@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head prefix="og: http://ogp.me/ns#">
+		<meta charset="utf-8">
+		<title>大风 10E 直播 | 近实时卫星图像,历史卫星图像, luhui Zoom Earth</title>
+		<meta name="description" content="LIVE satellite images and tracking maps of 大风 10E 2020. Current wind speed 35mph.">
+		<meta name="author" content="luhui culture network">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no, viewport-fit=cover">
+		<meta name="referrer" content="origin">
+		<meta name="google" content="notranslate">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="apple-mobile-web-app-title" content="luhui Zoom Earth">
+		<meta name="application-name" content="luhui Zoom Earth">
+		<meta name="msapplication-tooltip" content="luhui Zoom Earth">
+		<meta name="msapplication-starturl" content="/">
+		<meta name="msapplication-TileImage" content="/assets/images/icon-400.jpg">
+		<meta name="msapplication-TileColor" content="#000">
+		<meta name="msapplication-navbutton-color" content="#000">
+		<meta name="theme-color" content="#000">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="/storms/10e-2020/">
+		<meta property="og:site_name" content="luhui Zoom Earth">
+		<meta property="og:title" content="大风 10E 直播 | luhui Zoom Earth">
+		<meta property="og:description" content="LIVE satellite images and tracking maps of 大风 10E 2020. Current wind speed 35mph.">
+		<meta property="og:image" content="/assets/images/storms/2048/2020/10e.4.jpg">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@zoom_earth">
+		<meta name="twitter:title" content="大风 10E 直播 | luhui Zoom Earth">
+		<meta name="twitter:description" content="LIVE satellite images and tracking maps of 大风 10E 2020. Current wind speed 35mph.">
+		<meta name="twitter:image" content="/assets/images/storms/2048/2020/10e.4.jpg">
+		<link rel="shortcut icon" href="/assets/images/icon-16.png">
+		<link rel="icon" sizes="16x16" href="/assets/images/icon-16.png">
+		<link rel="icon" sizes="32x32" href="/assets/images/icon-32.png">
+		<link rel="icon" sizes="100x100" href="/assets/images/icon-100.jpg">
+		<link rel="icon" sizes="200x200" href="/assets/images/icon-200.jpg">
+		<link rel="icon" sizes="400x400" href="/assets/images/icon-400.jpg">
+		<link rel="image_src" href="/assets/images/storms/2048/2020/10e.4.jpg">
+		<link rel="apple-touch-icon-precomposed" href="/assets/images/icon-400.jpg">
+		<link rel="preconnect" href="https://tiles.zoom.earth" crossorigin="anonymous">
+		<link rel="dns-prefetch" href="https://tiles.zoom.earth">
+		<link rel="dns-prefetch" href="https://gibs.earthdata.nasa.gov">
+		<link rel="dns-prefetch" href="https://gibs-a.earthdata.nasa.gov">
+		<link rel="dns-prefetch" href="https://gibs-b.earthdata.nasa.gov">
+		<link rel="dns-prefetch" href="https://gibs-c.earthdata.nasa.gov">
+		<link rel="dns-prefetch" href="https://t.ssl.ak.tiles.virtualearth.net">
+		<link rel="dns-prefetch" href="https://services.arcgisonline.com">
+		<link rel="dns-prefetch" href="https://server.arcgisonline.com">
+		<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+		<link rel="dns-prefetch" href="https://tpc.googlesyndication.com">
+		<link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
+		<link rel="dns-prefetch" href="https://stats.g.doubleclick.net">
+		<link rel="dns-prefetch" href="https://www.google-analytics.com">
+		<link rel="preload" href="/assets/css/app.64432efc.css" as="style">
+		<link rel="stylesheet" href="/assets/css/app.64432efc.css">
+		<link rel="prefetch" href="https://tiles.zoom.earth/live/latest.json" crossorigin="anonymous">
+		<link rel="preload" href="/assets/fonts/museo-sans-cyrl-500.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="/assets/fonts/museo-sans-cyrl-700.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="manifest" href="/manifest.1.json">
+	</head>
+	<body class="cookies-consent enable-2x enable-webp scrollbar-fix">
+		<main class="app ui-storm-info">
+			<section id="map" tabindex="0"></section>
+			<div id="crosshairs"></div>
+			<article class="panel controls hour12">
+				<header>
+					<a href="/" target="_top"><h1><span>Zoom Earth</span></h1></a>
+					<p class="strapline live">近实时卫星图像</p>
+					<p class="strapline daily">每天都有新的卫星图像</p>
+					<p class="strapline monthly">历史卫星图像</p>
+				</header>
+				<section class="clock">
+					<nav class="daily">
+						<div class="year">
+							<button class="up" aria-label="下一个" disabled><span></span></button>
+							<div class="text"><span class="loading"><span>·</span><span>·</span><span>·</span></span></div>
+							<button class="down" aria-label="以前" disabled><span></span></button>
+						</div>
+						<div class="month">
+							<button class="up" aria-label="下一个" disabled><span></span></button>
+							<div class="text"><span class="loading"><span>·</span><span>·</span><span>·</span></span></div>
+							<button class="down" aria-label="以前" disabled><span></span></button>
+						</div>
+						<div class="day">
+							<button class="up" aria-label="下一个" disabled><span></span></button>
+							<div class="text"><span class="loading"><span>·</span><span>·</span><span>·</span></span></div>
+							<button class="down" aria-label="以前" disabled><span></span></button>
+						</div>
+						<div class="ampm">
+							<button class="up" aria-label="下一个" disabled><span></span></button>
+							<div class="text"><span class="loading"><span>·</span><span>·</span><span>·</span></span></div>
+							<button class="down" aria-label="以前" disabled><span></span></button>
+						</div>
+						<div class="hour">
+							<button class="up" aria-label="下一个" disabled><span></span></button>
+							<div class="text"><span class="loading"><span>·</span><span>·</span><span>·</span></span></div>
+							<button class="down" aria-label="以前" disabled><span></span></button>
+						</div>
+						<div class="colon blink">:</div>
+						<div class="minute">
+							<button class="up" aria-label="下一个" disabled><span></span></button>
+							<div class="text"><span class="loading"><span>·</span><span>·</span><span>·</span></span></div>
+							<div class="text-ampm"></div>
+							<button class="down" aria-label="以前" disabled><span></span></button>
+						</div>
+						<div class="recent">
+							<button class="arrow" aria-label="日期" disabled><span class="icon"></span></button>
+						</div>
+					</nav>
+					<form class="monthly">
+						<input type="radio" name="layer-date" id="layer-bing"><label for="layer-bing" class="bing"><span class="long"><span class="loading"><span>·</span><span>·</span><span>·</span></span></span><span class="short"><span class="loading"><span>·</span><span>·</span><span>·</span></span></span></label>
+						<input type="radio" name="layer-date" id="layer-esri"><label for="layer-esri" class="esri"><span class="long"><span class="loading"><span>·</span><span>·</span><span>·</span></span></span><span class="short"><span class="loading"><span>·</span><span>·</span><span>·</span></span></span></label>
+					</form>
+					<div class="no-monthly"></div>
+				</section>
+			</article>
+			<div class="help clock"><div class="anchor"></div><p class="no-touch">单击箭头<br>更改时间。</p><p class="touch">使用箭头更改时间。</p></div>
+			<div class="help zoom"><div class="anchor"></div><p>缩小以查看实时图像！</p></div>
+			<div class="help measure"><p class="no-touch">单击以添加一个点。 再次单击以完成。</p><p class="touch">触摸以添加点。 触摸两次即可完成。</p></div>
+			<div class="panel search">
+				<form>
+					<input name="q" type="text" placeholder="搜索&hellip;&hellip;" aria-label="搜索" maxlength="255" autocorrect="off" autocapitalize="off" autocomplete="off"><input type="submit" value="">
+				</form>
+			</div>
+			<button class="search" aria-label="提交">
+				<span class="icon"></span>
+			</button>
+			<div class="notify"></div>
+			<article class="panel storm-info live">
+				<header>
+					<h2><span class="live">直播</span> 大风 10E</h2>
+					<button class="close" aria-label="关"><span></span></button>
+				</header>
+				<section>
+					<table>
+						<thead>
+							<tr>
+								<th class="date" scope="col">日期</th>
+								<th class="time" scope="col">时间</th>
+								<th class="type" scope="col">类别</th>
+								<th class="wind" scope="col">风速</th>
+								<th class="pressure" scope="col">气压</th>
+							</tr>
+							<tr>
+								<td class="date" colspan="2">UTC</td>
+								<td class="type"></td>
+								<td class="wind mph">
+									<span class="knots">节</span>
+									<span class="kmh">km/h</span>
+									<span class="mph">mph</span>
+								</td>
+								<td class="pressure">毫巴</td>
+							</tr>
+						</thead>
+						<tbody><tr class="rank-1 forecast" title="大风"><td class="date">Aug 21</td><td class="time">00:00</td><td class="type"><span class="icon">D</span></td><td class="wind">35</td><td class="pressure"></td></tr><tr class="rank-1 forecast" title="大风"><td class="date">Aug 20</td><td class="time">00:00</td><td class="type"><span class="icon">D</span></td><td class="wind">35</td><td class="pressure"></td></tr><tr class="rank-1 forecast" title="大风"><td class="date">Aug 19</td><td class="time">00:00</td><td class="type"><span class="icon">D</span></td><td class="wind">35</td><td class="pressure"></td></tr><tr class="rank-1 forecast" title="大风"><td class="date">Aug 18</td><td class="time">12:00</td><td class="type"><span class="icon">D</span></td><td class="wind">35</td><td class="pressure"></td></tr><tr class="rank-1 forecast" title="大风"><td class="date">Aug 18</td><td class="time">00:00</td><td class="type"><span class="icon">D</span></td><td class="wind">35</td><td class="pressure"></td></tr><tr class="rank-1 forecast" title="大风"><td class="date">Aug 17</td><td class="time">12:00</td><td class="type"><span class="icon">D</span></td><td class="wind">35</td><td class="pressure"></td></tr><tr class="rank-1 forecast" title="大风"><td class="date">Aug 17</td><td class="time">00:00</td><td class="type"><span class="icon">D</span></td><td class="wind">35</td><td class="pressure"></td></tr><tr class="rank-1 forecast" title="大风"><td class="date">Aug 16</td><td class="time">12:00</td><td class="type"><span class="icon">D</span></td><td class="wind">35</td><td class="pressure"></td></tr><tr class="rank-1" title="大风"><td class="date">Aug 16</td><td class="time">00:00</td><td class="type"><span class="icon">D</span></td><td class="wind">35</td><td class="pressure">1005</td></tr><tr class="rank-1" title="大风"><td class="date">Aug 15</td><td class="time">18:00</td><td class="type"><span class="icon">D</span></td><td class="wind">35</td><td class="pressure">1004</td></tr><tr class="rank-1" title="大风"><td class="date">Aug 15</td><td class="time">12:00</td><td class="type"><span class="icon">D</span></td><td class="wind">35</td><td class="pressure">1004</td></tr><tr class="rank-1" title="大风"><td class="date">Aug 15</td><td class="time">06:00</td><td class="type"><span class="icon">D</span></td><td class="wind">35</td><td class="pressure">1004</td></tr><tr class="rank-1" title="大风"><td class="date">Aug 15</td><td class="time">00:00</td><td class="type"><span class="icon">D</span></td><td class="wind">35</td><td class="pressure">1004</td></tr><tr class="rank-1" title="大风"><td class="date">Aug 14</td><td class="time">18:00</td><td class="type"><span class="icon">D</span></td><td class="wind">35</td><td class="pressure">1004</td></tr><tr class="rank-1" title="大风"><td class="date">Aug 14</td><td class="time">12:00</td><td class="type"><span class="icon">D</span></td><td class="wind">35</td><td class="pressure">1004</td></tr><tr class="rank-1" title="大风"><td class="date">Aug 14</td><td class="time">06:00</td><td class="type"><span class="icon">D</span></td><td class="wind">35</td><td class="pressure">1004</td></tr><tr class="rank-1" title="大风"><td class="date">Aug 14</td><td class="time">00:00</td><td class="type"><span class="icon">D</span></td><td class="wind">35</td><td class="pressure">1004</td></tr><tr class="rank-1" title="大风"><td class="date">Aug 13</td><td class="time">18:00</td><td class="type"><span class="icon">D</span></td><td class="wind">35</td><td class="pressure">1004</td></tr><tr class="rank-1" title="大风"><td class="date">Aug 13</td><td class="time">12:00</td><td class="type"><span class="icon">D</span></td><td class="wind">35</td><td class="pressure">1004</td></tr><tr class="rank-1" title="大风"><td class="date">Aug 13</td><td class="time">06:00</td><td class="type"><span class="icon">D</span></td><td class="wind">35</td><td class="pressure">1004</td></tr><tr class="rank-2" title="低"><td class="date">Aug 13</td><td class="time">00:00</td><td class="type"><span class="icon">L</span></td><td class="wind">29</td><td class="pressure">1005</td></tr><tr class="rank-2" title="低"><td class="date">Aug 12</td><td class="time">18:00</td><td class="type"><span class="icon">L</span></td><td class="wind">29</td><td class="pressure">1006</td></tr><tr class="rank-2" title="大风"><td class="date">Aug 12</td><td class="time">12:00</td><td class="type"><span class="icon">B</span></td><td class="wind">29</td><td class="pressure">1006</td></tr><tr class="rank-2" title="大风"><td class="date">Aug 12</td><td class="time">06:00</td><td class="type"><span class="icon">B</span></td><td class="wind">29</td><td class="pressure">1008</td></tr><tr class="rank-2" title="大风"><td class="date">Aug 12</td><td class="time">00:00</td><td class="type"><span class="icon">B</span></td><td class="wind">29</td><td class="pressure">1007</td></tr><tr class="rank-2" title="大风"><td class="date">Aug 11</td><td class="time">18:00</td><td class="type"><span class="icon">B</span></td><td class="wind">29</td><td class="pressure">1009</td></tr><tr class="rank-2" title="大风"><td class="date">Aug 11</td><td class="time">12:00</td><td class="type"><span class="icon">B</span></td><td class="wind">23</td><td class="pressure"></td></tr><tr class="rank-2" title="大风"><td class="date">Aug 11</td><td class="time">06:00</td><td class="type"><span class="icon">B</span></td><td class="wind">23</td><td class="pressure"></td></tr></tbody>
+					</table>
+				</section>
+				<footer>
+					<div class="foot-type"><span class="icon"></span></div>
+					<div class="foot-text notranslate">
+						<p class="text1"></p>
+						<p class="text2"></p>
+					</div>
+					<div class="foot-links notranslate">
+						<p class="details"><span class="icon"></span><span class="text long">最新警告（英语）</span><span class="text short">忠告</span></p>
+						<a href="http://twitter.com/luhuiceo" target="_blank" rel="noopener"><p class="twitter"><span class="icon"></span><span class="text">GIF动画</span></p></a>
+					</div>
+				</footer>
+			</article>
+			<article class="panel storm-details">
+				<header>
+					<h2>大风 10E 2020</h2>
+					<p class="lastmod">最后修改： <time datetime="2020-08-16T03:00:00.000Z">2020-08-16 03:00 UTC</time></p>
+					<button class="close" aria-label="关"><span></span></button>
+				</header>
+				<section lang="en"><div class="image"><a href="/assets/images/storms/2048/2020/10e.4.jpg" target="_blank"><img src="/assets/images/storms/512/2020/10e.4.jpg" srcset="/assets/images/storms/128/2020/10e.4.jpg, /assets/images/storms/256/2020/10e.4.jpg 2x, /assets/images/storms/512/2020/10e.4.jpg 4x, /assets/images/storms/2048/2020/10e.4.jpg 16x" width="128" height="128" loading="lazy" alt="大风 10E 2020"><figcaption>10E 2020</figcaption></a></div><div class="text"><p>The depression is barely a tropical cyclone. The deep convection that was located along the southern side of the circulation earlier today (August 15) has nearly completely dissipated, and the system currently looks like an ITCZ low-level cloud swirl. The initial intensity is held generously at 30 knots based on the earlier ASCAT data.</p><p>The cyclone is currently experiencing strong northeasterly wind shear, and given that the shear is expected to remain strong for another day or so, this system could degenerate into a remnant low during that time. However, the shear is expected to lessen after that, and if the depression survives, it could linger for several more days. The models show little change in strength, and the NHC prediction keeps the system steady in intensity through the forecast period.</p><p>Since the depression is caught in weak steering currents between a low pressure system to its east-northeast and a narrow ridge to its northwest, it has not moved much during the past several hours. As the low east-northeast of the system pulls northward, the weak depression, or its remnants, should generally drift northwestward during the next couple of days and then southwestward after that time.</p><p class="credits">Information provided by NHC.</p></div></section>
+			</article>
+			<article class="panel storm-season">
+				<header>
+					<a href="/storms/" target="_top"><div class="icon"></div><h2>台风</h2></a>
+					<button class="left" aria-label="以前"><span></span></button>
+					<h3>2020</h3>
+					<button class="right" aria-label="下一个" disabled><span></span></button>
+					<form name="storms" class="segment">
+						<input type="radio" name="sort" id="sort-type" value="type" class="sort" checked><label for="sort-type">类别</label>
+						<input type="radio" name="sort" id="sort-alpha" value="alpha" class="sort"><label for="sort-alpha">字母</label>
+						<input type="radio" name="sort" id="sort-date" value="date" class="sort"><label for="sort-date">日期</label>
+						<div class="selection"></div>
+					</form>
+					<button class="close" aria-label="关"><span></span></button>
+				</header>
+				<section></section>
+				<p class="error-message">无法加载。 请再试一次。</p>
+			</article>
+			<button class="storm-season" aria-label="台风">
+				<span class="icon"></span>
+				<span class="close"></span>
+			</button>
+			<div class="panel settings">
+				<form>
+					<h4 class="layers">层数</h4>
+					<div class="checkbox labels"><input type="checkbox" id="setting-labels"><label for="setting-labels">地图标签</label></div>
+					<div class="checkbox live"><input type="checkbox" id="setting-live" checked><label for="setting-live">实时影像</label></div>
+					<div class="checkbox daily"><input type="checkbox" id="setting-daily" checked><label for="setting-daily">每日图片</label></div>
+					<div class="checkbox storms"><input type="checkbox" id="setting-storms" checked><label for="setting-storms">台风</label></div>
+					<div class="checkbox fires"><input type="checkbox" id="setting-fires"><label for="setting-fires">着火</label></div>
+					<div class="checkbox terminator"><input type="checkbox" id="setting-terminator" checked><label for="setting-terminator">昼夜线</label></div>
+					<div class="checkbox crosshairs"><input type="checkbox" id="setting-crosshairs"><label for="setting-crosshairs">十字线</label></div>
+					<h4 class="settings">设置</h4>
+					<div class="checkbox time"><input type="checkbox" id="setting-time-utc"><label for="setting-time-utc">世界标准时间</label></div>
+					<div class="checkbox time"><input type="checkbox" id="setting-time-24" checked><label for="setting-time-24">二十四小時制</label></div>
+					<div class="checkbox zoom"><input type="checkbox" id="setting-zoom"><label for="setting-zoom">缩放到中心</label></div>
+				</form>
+			</div>
+			<button class="settings" aria-label="层数 / 设置">
+				<span class="icon"></span>
+				<span class="close"></span>
+			</button>
+			<button class="zoom in" aria-label="放大">
+				<span class="icon">+</span>
+			</button>
+			<button class="zoom out" aria-label="缩小">
+				<span class="icon">−</span>
+			</button>
+			<button class="measure length" aria-label="测量距离">
+				<span class="icon"></span>
+				<span class="close"></span>
+			</button>
+			<button class="measure area" aria-label="测量面积">
+				<span class="icon"></span>
+				<span class="close"></span>
+			</button>
+			<button class="locate" aria-label="设置到您的位置">
+				<span class="icon"></span>
+				<span class="dot"></span>
+			</button>
+			<button class="share" aria-label="分享这个">
+				<span class="icon"></span>
+			</button>
+			<div class="panel location">
+				<div class="lat"><span class="loading"><span>.</span><span>.</span><span>.</span></span></div>
+				<div class="lon"><span class="loading"><span>.</span><span>.</span><span>.</span></span></div>
+			</div>
+			<aside class="tooltips">
+				<p class="storm-season">台风</p>
+				<p class="settings">层数 / 设置</p>
+				<p class="zoom in">放大</p>
+				<p class="zoom out">缩小</p>
+				<p class="measure length">测量距离</p>
+				<p class="measure area">测量面积</p>
+				<p class="locate">设置到您的位置</p>
+				<p class="share">分享这个</p>
+			</aside>
+			<button class="about" aria-label="信息">
+				<span class="icon notranslate">?</span>
+				<span class="close"></span>
+			</button>
+			<aside class="panel about">
+				<h3>信息</h3>
+				<p><a href="/" target="_top">Zoom Earth</a>表示最新的卫星图像。</p>
+				<p>实时图像：<a href="https://zh.wikipedia.org/wiki/%E9%9D%9C%E6%AD%A2%E7%92%B0%E5%A2%83%E8%A7%80%E6%B8%AC%E8%A1%9B%E6%98%9F" target="_blank" rel="nofollow noopener">GOES</a>、<a href="https://zh.wikipedia.org/wiki/%E5%90%91%E6%97%A5%E8%91%B58%E8%99%9F" target="_blank" rel="nofollow noopener">向日葵8號</a>、<a href="https://www.eumetsat.int/website/home/Satellites/CurrentSatellites/Meteosat/" target="_blank" rel="nofollow noopener">Meteosat</a>。</p>
+				<p>每日图片：<a href="https://earthdata.nasa.gov/gibs" target="_blank" rel="noopener" title="Global Imagery Browse Services">NASA GIBS</a>、<a href="https://earthdata.nasa.gov/eosdis" target="_blank" rel="noopener" title="Earth Observing System Data and Information System">EOSDIS</a>。</p>
+				<p>历史图像：<a href="https://www.microsoft.com/maps" target="_blank" rel="nofollow noreferrer">Microsoft</a>、<a href="https://www.esri.com/" target="_blank" rel="nofollow noreferrer">Esri</a>。</p>
+				<p>风暴数据：<a href="https://www.nhc.noaa.gov/" target="_blank" rel="nofollow noopener" title="National Hurricane Center">NHC</a>、<a href="https://www.metoc.navy.mil/jtwc/jtwc.html" target="_blank" rel="nofollow noopener" title="Joint Typhoon Warning Center">JTWC</a>、<a href="https://www.ncdc.noaa.gov/ibtracs/" target="_blank" rel="nofollow noopener" title="International Best Track Archive for Climate Stewardship">IBTrACS</a>。</p>
+				<p>&copy; 2020 <a href="https://neave.com/" target="_blank" rel="noopener">luhui culture network</a> | <a href="/legal/terms/" target="_blank" rel="nofollow noopener">服务条款</a> | <a href="/legal/privacy/" target="_blank" rel="nofollow noopener">隐私政策</a></p>
+			</aside>
+			<aside class="tooltips">
+				<p class="about">信息</p>
+			</aside>
+			<footer class="attribution">Copyright&nbsp;2004-01-11&nbsp;<a href="http://www.luhui.net" title="鲁虺文化网">luhui.net</a>&nbsp;all rights reserved.</footer>
+			<div class="panel ad">
+				<div>
+<ins class="adsbygoogle" data-ad-client="ca-pub-9316345695176880" data-ad-slot="2679725695" data-ad-format="link" data-restrict-data-processing="1" data-page-url="/"></ins>
+<script> (adsbygoogle=window.adsbygoogle||[]).push({}); </script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				</div>
+			</div>
+			<div class="panel monthly-ad">
+				<div>
+<ins class="adsbygoogle" data-ad-client="ca-pub-9316345695176880" data-ad-slot="2556591053" data-ad-format="rectangle" data-restrict-data-processing="1" data-page-url="/"></ins>
+<script> (adsbygoogle=window.adsbygoogle||[]).push({}); </script>
+				</div>
+			</div>
+			<span class="preload-images"></span>
+		</main>
+		<script>window._ZE={"countryCode":"US","bing":{"aerial":8962,"dynamic":1108},"stormData":{"id":"10e-2020","name":"10E 2020","title":"\u5927\u98ce 10E 2020","type":"\u5927\u98ce","max":19,"forecast":27,"ja":null,"ph":null,"agencies":"NHC\/JTWC","track":[{"date":"2020-08-11T06:00:00Z","coordinates":[-126,11.6],"wind":20,"pressure":null,"basin":"EP","forecast":false,"rank":-2,"code":"B","description":"\u5927\u98ce"},{"date":"2020-08-11T12:00:00Z","coordinates":[-126,12],"wind":20,"pressure":null,"basin":"EP","forecast":false,"rank":-2,"code":"B","description":"\u5927\u98ce"},{"date":"2020-08-11T18:00:00Z","coordinates":[-125.8,12.3],"wind":25,"pressure":1009,"basin":"EP","forecast":false,"rank":-2,"code":"B","description":"\u5927\u98ce"},{"date":"2020-08-12T00:00:00Z","coordinates":[-125.7,12.6],"wind":25,"pressure":1007,"basin":"EP","forecast":false,"rank":-2,"code":"B","description":"\u5927\u98ce"},{"date":"2020-08-12T06:00:00Z","coordinates":[-125.8,13],"wind":25,"pressure":1008,"basin":"EP","forecast":false,"rank":-2,"code":"B","description":"\u5927\u98ce"},{"date":"2020-08-12T12:00:00Z","coordinates":[-126.3,13.1],"wind":25,"pressure":1006,"basin":"EP","forecast":false,"rank":-2,"code":"B","description":"\u5927\u98ce"},{"date":"2020-08-12T18:00:00Z","coordinates":[-127.1,13.2],"wind":25,"pressure":1006,"basin":"EP","forecast":false,"rank":-2,"code":"L","description":"\u4f4e"},{"date":"2020-08-13T00:00:00Z","coordinates":[-127.9,13.3],"wind":25,"pressure":1005,"basin":"EP","forecast":false,"rank":-2,"code":"L","description":"\u4f4e"},{"date":"2020-08-13T06:00:00Z","coordinates":[-128.7,13.4],"wind":30,"pressure":1004,"basin":"EP","forecast":false,"rank":-1,"code":"D","description":"\u5927\u98ce"},{"date":"2020-08-13T12:00:00Z","coordinates":[-129.5,13.6],"wind":30,"pressure":1004,"basin":"EP","forecast":false,"rank":-1,"code":"D","description":"\u5927\u98ce"},{"date":"2020-08-13T18:00:00Z","coordinates":[-130.3,13.9],"wind":30,"pressure":1004,"basin":"EP","forecast":false,"rank":-1,"code":"D","description":"\u5927\u98ce"},{"date":"2020-08-14T00:00:00Z","coordinates":[-130.9,14.2],"wind":30,"pressure":1004,"basin":"EP","forecast":false,"rank":-1,"code":"D","description":"\u5927\u98ce"},{"date":"2020-08-14T06:00:00Z","coordinates":[-131.4,13.9],"wind":30,"pressure":1004,"basin":"EP","forecast":false,"rank":-1,"code":"D","description":"\u5927\u98ce"},{"date":"2020-08-14T12:00:00Z","coordinates":[-131.8,13.7],"wind":30,"pressure":1004,"basin":"EP","forecast":false,"rank":-1,"code":"D","description":"\u5927\u98ce"},{"date":"2020-08-14T18:00:00Z","coordinates":[-132.6,13.5],"wind":30,"pressure":1004,"basin":"EP","forecast":false,"rank":-1,"code":"D","description":"\u5927\u98ce"},{"date":"2020-08-15T00:00:00Z","coordinates":[-133,13.4],"wind":30,"pressure":1004,"basin":"EP","forecast":false,"rank":-1,"code":"D","description":"\u5927\u98ce"},{"date":"2020-08-15T06:00:00Z","coordinates":[-133.3,13.4],"wind":30,"pressure":1004,"basin":"EP","forecast":false,"rank":-1,"code":"D","description":"\u5927\u98ce"},{"date":"2020-08-15T12:00:00Z","coordinates":[-133.5,13.2],"wind":30,"pressure":1004,"basin":"EP","forecast":false,"rank":-1,"code":"D","description":"\u5927\u98ce"},{"date":"2020-08-15T18:00:00Z","coordinates":[-133.7,13],"wind":30,"pressure":1004,"basin":"EP","forecast":false,"rank":-1,"code":"D","description":"\u5927\u98ce"},{"date":"2020-08-16T00:00:00Z","coordinates":[-133.8,13.1],"wind":30,"pressure":1005,"basin":"EP","forecast":false,"rank":-1,"code":"D","description":"\u5927\u98ce"},{"date":"2020-08-16T12:00:00Z","coordinates":[-133.9,13.6],"wind":30,"pressure":null,"basin":"EP","forecast":true,"rank":-1,"code":"D","description":"\u5927\u98ce"},{"date":"2020-08-17T00:00:00Z","coordinates":[-134.1,13.9],"wind":30,"pressure":null,"basin":"EP","forecast":true,"rank":-1,"code":"D","description":"\u5927\u98ce"},{"date":"2020-08-17T12:00:00Z","coordinates":[-134.5,14.1],"wind":30,"pressure":null,"basin":"EP","forecast":true,"rank":-1,"code":"D","description":"\u5927\u98ce"},{"date":"2020-08-18T00:00:00Z","coordinates":[-135,14.3],"wind":30,"pressure":null,"basin":"EP","forecast":true,"rank":-1,"code":"D","description":"\u5927\u98ce"},{"date":"2020-08-18T12:00:00Z","coordinates":[-135.4,14.1],"wind":30,"pressure":null,"basin":"EP","forecast":true,"rank":-1,"code":"D","description":"\u5927\u98ce"},{"date":"2020-08-19T00:00:00Z","coordinates":[-135.7,13.8],"wind":30,"pressure":null,"basin":"EP","forecast":true,"rank":-1,"code":"D","description":"\u5927\u98ce"},{"date":"2020-08-20T00:00:00Z","coordinates":[-136.3,13.2],"wind":30,"pressure":null,"basin":"EP","forecast":true,"rank":-1,"code":"D","description":"\u5927\u98ce"},{"date":"2020-08-21T00:00:00Z","coordinates":[-136.4,12.7],"wind":30,"pressure":null,"basin":"EP","forecast":true,"rank":-1,"code":"D","description":"\u5927\u98ce"}],"cone":[[-138.756026,12.689612],[-138.742619,12.464494],[-138.706739,12.241736],[-138.648784,12.023471],[-138.569362,11.811786],[-138.469274,11.608698],[-138.349515,11.41614],[-138.211259,11.23594],[-138.055847,11.069806],[-137.884773,10.919314],[-137.699677,10.785884],[-137.502319,10.670779],[-137.294572,10.575085],[-137.0784,10.499704],[-136.855843,10.445348],[-136.628999,10.412528],[-136.4,10.401553],[-136.171001,10.412528],[-135.944157,10.445348],[-135.7216,10.499704],[-135.505428,10.575085],[-135.297681,10.670779],[-135.100323,10.785884],[-134.915227,10.919314],[-134.744153,11.069806],[-134.588741,11.23594],[-134.450485,11.41614],[-134.330726,11.608698],[-134.230638,11.811786],[-134.151216,12.023471],[-134.093261,12.241736],[-134.057381,12.464494],[-134.046894,12.760691],[-133.963349,12.715259],[-133.883267,12.691602],[-133.8,12.683615],[-133.716733,12.691602],[-133.59877,12.732704],[-133.529141,12.777989],[-133.469882,12.835639],[-133.423268,12.903445],[-133.391098,12.978808],[-133.374619,13.058839],[-133.36022,13.599419],[-133.370363,13.701793],[-133.47558,14.082927],[-133.524243,14.197671],[-133.557053,14.25102],[-133.821366,14.637911],[-134.207264,15.064184],[-134.288547,15.135789],[-134.471052,15.254175],[-134.570505,15.299801],[-134.780982,15.361698],[-134.889953,15.377363],[-135.4,15.399122],[-135.532063,15.39283],[-135.662831,15.374014],[-136.155977,15.249948],[-136.875606,15.03223],[-137.058607,14.968417],[-137.234129,14.887457],[-137.520042,14.724599],[-137.719367,14.607697],[-137.905673,14.472319],[-138.077152,14.319799],[-138.232152,14.15164],[-138.369193,13.969491],[-138.48698,13.775138],[-138.584418,13.570477],[-138.660613,13.357502],[-138.714885,13.138278],[-138.746772,12.91493],[-138.756026,12.689612]],"live":true},"strings":{"clock":{"am":"上午","pm":"下午"},"him8":"向日葵8號","location":{"east":"東","north":"北","south":"南","west":"西"},"storm":{"forecast":"预报","knots":"节","lastMod":"最后修改：","live":"直播","liveTitle":"直播","midnight":"午夜","noon":"中午","title":"台风","winds":"风速为%s"},"strapline":"查看实时卫星图像"}};!function(e){function r(r){for(var n,l,a=r[0],f=r[1],i=r[2],c=0,s=[];c<a.length;c++)l=a[c],Object.prototype.hasOwnProperty.call(o,l)&&o[l]&&s.push(o[l][0]),o[l]=0;for(n in f)Object.prototype.hasOwnProperty.call(f,n)&&(e[n]=f[n]);for(p&&p(r);s.length;)s.shift()();return u.push.apply(u,i||[]),t()}function t(){for(var e,r=0;r<u.length;r++){for(var t=u[r],n=!0,a=1;a<t.length;a++){var f=t[a];0!==o[f]&&(n=!1)}n&&(u.splice(r--,1),e=l(l.s=t[0]))}return e}var n={},o={2:0},u=[];function l(r){if(n[r])return n[r].exports;var t=n[r]={i:r,l:!1,exports:{}};return e[r].call(t.exports,t,t.exports,l),t.l=!0,t.exports}l.m=e,l.c=n,l.d=function(e,r,t){l.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},l.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},l.t=function(e,r){if(1&r&&(e=l(e)),8&r)return e;if(4&r&&"object"==typeof e&&e&&e.__esModule)return e;var t=Object.create(null);if(l.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:e}),2&r&&"string"!=typeof e)for(var n in e)l.d(t,n,function(r){return e[r]}.bind(null,n));return t},l.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return l.d(r,"a",r),r},l.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},l.p="/assets/js/";var a=window.webpackJsonp=window.webpackJsonp||[],f=a.push.bind(a);a.push=r,a=a.slice();for(var i=0;i<a.length;i++)r(a[i]);var p=f;t()}([]);</script>
+		<script src="/assets/js/vendor.28db5a2b.js"></script>
+		<script src="/assets/js/app.f6da4db0.js"></script>
+	<div style="display:none"><script src="http://s11.cnzz.com/z_stat.php?id=610720&web_id=610720" language="JavaScript"></script></div></body>
+</html>
