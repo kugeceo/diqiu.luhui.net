@@ -1,3 +1,11 @@
+# # 
+https://diqiu.netlify.app/
+# # 
+http://diqiu.luhui.net/
+# # 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f8488cae-164c-4797-92ac-c28a14ae3da3/deploy-status)](https://app.netlify.com/sites/diqiu/deploys)
+
+
 # [Worldview](https://worldview.earthdata.nasa.gov)
 
 [![Worldview Screenshot](/web/images/preview.gif)](https://worldview.earthdata.nasa.gov)
